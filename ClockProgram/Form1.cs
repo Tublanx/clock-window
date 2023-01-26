@@ -16,5 +16,15 @@ namespace ClockProgram
         {
             InitializeComponent();
         }
+
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void plusBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
