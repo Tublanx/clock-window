@@ -32,13 +32,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnPressMinUp = new System.Windows.Forms.Button();
             this.btnPressSecUp = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblHour = new System.Windows.Forms.Label();
+            this.lblMin = new System.Windows.Forms.Label();
+            this.lblSec = new System.Windows.Forms.Label();
             this.btnPressSecDown = new System.Windows.Forms.Button();
             this.btnPressMinDown = new System.Windows.Forms.Button();
             this.btnPressHourDown = new System.Windows.Forms.Button();
-            this.ibxTtle = new System.Windows.Forms.TextBox();
+            this.tbxTtle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPressSave = new System.Windows.Forms.Button();
@@ -53,6 +53,7 @@
             this.btnPressHourUp.TabIndex = 0;
             this.btnPressHourUp.Text = "△";
             this.btnPressHourUp.UseVisualStyleBackColor = true;
+            this.btnPressHourUp.Click += new System.EventHandler(this.btnPressHourUp_Click);
             // 
             // label1
             // 
@@ -71,6 +72,7 @@
             this.btnPressMinUp.TabIndex = 0;
             this.btnPressMinUp.Text = "△";
             this.btnPressMinUp.UseVisualStyleBackColor = true;
+            this.btnPressMinUp.Click += new System.EventHandler(this.btnPressMinUp_Click);
             // 
             // btnPressSecUp
             // 
@@ -80,36 +82,37 @@
             this.btnPressSecUp.TabIndex = 0;
             this.btnPressSecUp.Text = "△";
             this.btnPressSecUp.UseVisualStyleBackColor = true;
+            this.btnPressSecUp.Click += new System.EventHandler(this.btnPressSecUp_Click);
             // 
-            // label2
+            // lblHour
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.Location = new System.Drawing.Point(39, 97);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(58, 45);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "00";
+            this.lblHour.AutoSize = true;
+            this.lblHour.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblHour.Location = new System.Drawing.Point(39, 97);
+            this.lblHour.Name = "lblHour";
+            this.lblHour.Size = new System.Drawing.Size(58, 45);
+            this.lblHour.TabIndex = 2;
+            this.lblHour.Text = "00";
             // 
-            // label3
+            // lblMin
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(141, 97);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 45);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "00";
+            this.lblMin.AutoSize = true;
+            this.lblMin.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMin.Location = new System.Drawing.Point(141, 97);
+            this.lblMin.Name = "lblMin";
+            this.lblMin.Size = new System.Drawing.Size(58, 45);
+            this.lblMin.TabIndex = 2;
+            this.lblMin.Text = "00";
             // 
-            // label4
+            // lblSec
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(242, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 45);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "00";
+            this.lblSec.AutoSize = true;
+            this.lblSec.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSec.Location = new System.Drawing.Point(242, 97);
+            this.lblSec.Name = "lblSec";
+            this.lblSec.Size = new System.Drawing.Size(58, 45);
+            this.lblSec.TabIndex = 2;
+            this.lblSec.Text = "00";
             // 
             // btnPressSecDown
             // 
@@ -119,6 +122,7 @@
             this.btnPressSecDown.TabIndex = 3;
             this.btnPressSecDown.Text = "▽";
             this.btnPressSecDown.UseVisualStyleBackColor = true;
+            this.btnPressSecDown.Click += new System.EventHandler(this.btnPressSecDown_Click);
             // 
             // btnPressMinDown
             // 
@@ -128,6 +132,7 @@
             this.btnPressMinDown.TabIndex = 4;
             this.btnPressMinDown.Text = "▽";
             this.btnPressMinDown.UseVisualStyleBackColor = true;
+            this.btnPressMinDown.Click += new System.EventHandler(this.btnPressMinDown_Click);
             // 
             // btnPressHourDown
             // 
@@ -137,13 +142,14 @@
             this.btnPressHourDown.TabIndex = 5;
             this.btnPressHourDown.Text = "▽";
             this.btnPressHourDown.UseVisualStyleBackColor = true;
+            this.btnPressHourDown.Click += new System.EventHandler(this.btnPressHourDown_Click);
             // 
-            // ibxTtle
+            // tbxTtle
             // 
-            this.ibxTtle.Location = new System.Drawing.Point(31, 205);
-            this.ibxTtle.Name = "ibxTtle";
-            this.ibxTtle.Size = new System.Drawing.Size(278, 21);
-            this.ibxTtle.TabIndex = 6;
+            this.tbxTtle.Location = new System.Drawing.Point(31, 205);
+            this.tbxTtle.Name = "tbxTtle";
+            this.tbxTtle.Size = new System.Drawing.Size(278, 21);
+            this.tbxTtle.TabIndex = 6;
             // 
             // label5
             // 
@@ -173,6 +179,7 @@
             this.btnPressSave.TabIndex = 8;
             this.btnPressSave.Text = "저장";
             this.btnPressSave.UseVisualStyleBackColor = true;
+            this.btnPressSave.Click += new System.EventHandler(this.btnPressSave_Click);
             // 
             // btnClose
             // 
@@ -182,6 +189,7 @@
             this.btnClose.TabIndex = 8;
             this.btnClose.Text = "취소";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // PlusClock
             // 
@@ -192,13 +200,13 @@
             this.Controls.Add(this.btnPressSave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.ibxTtle);
+            this.Controls.Add(this.tbxTtle);
             this.Controls.Add(this.btnPressSecDown);
             this.Controls.Add(this.btnPressMinDown);
             this.Controls.Add(this.btnPressHourDown);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblSec);
+            this.Controls.Add(this.lblMin);
+            this.Controls.Add(this.lblHour);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnPressSecUp);
             this.Controls.Add(this.btnPressMinUp);
@@ -216,13 +224,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnPressMinUp;
         private System.Windows.Forms.Button btnPressSecUp;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblHour;
+        private System.Windows.Forms.Label lblMin;
+        private System.Windows.Forms.Label lblSec;
         private System.Windows.Forms.Button btnPressSecDown;
         private System.Windows.Forms.Button btnPressMinDown;
         private System.Windows.Forms.Button btnPressHourDown;
-        private System.Windows.Forms.TextBox ibxTtle;
+        private System.Windows.Forms.TextBox tbxTtle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPressSave;
