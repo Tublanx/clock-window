@@ -24,7 +24,8 @@ namespace ClockProgram
 
         private void plusBtn_Click(object sender, EventArgs e)
         {
-
+            PlusClock plusClock = new PlusClock();
+            plusClock.Show();
         }
     }
 }
