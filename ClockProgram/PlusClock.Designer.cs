@@ -28,31 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnPressHourUp = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnPressMinUp = new System.Windows.Forms.Button();
+            this.btnPressSecUp = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnPressSecDown = new System.Windows.Forms.Button();
+            this.btnPressMinDown = new System.Windows.Forms.Button();
+            this.btnPressHourDown = new System.Windows.Forms.Button();
+            this.ibxTtle = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.btnPressSave = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btnPressHourUp
             // 
-            this.button1.Location = new System.Drawing.Point(31, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "△";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnPressHourUp.Location = new System.Drawing.Point(31, 71);
+            this.btnPressHourUp.Name = "btnPressHourUp";
+            this.btnPressHourUp.Size = new System.Drawing.Size(75, 23);
+            this.btnPressHourUp.TabIndex = 0;
+            this.btnPressHourUp.Text = "△";
+            this.btnPressHourUp.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -63,23 +63,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "새 타이머 추가";
             // 
-            // button2
+            // btnPressMinUp
             // 
-            this.button2.Location = new System.Drawing.Point(133, 71);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "△";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnPressMinUp.Location = new System.Drawing.Point(133, 71);
+            this.btnPressMinUp.Name = "btnPressMinUp";
+            this.btnPressMinUp.Size = new System.Drawing.Size(75, 23);
+            this.btnPressMinUp.TabIndex = 0;
+            this.btnPressMinUp.Text = "△";
+            this.btnPressMinUp.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnPressSecUp
             // 
-            this.button3.Location = new System.Drawing.Point(234, 71);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "△";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnPressSecUp.Location = new System.Drawing.Point(234, 71);
+            this.btnPressSecUp.Name = "btnPressSecUp";
+            this.btnPressSecUp.Size = new System.Drawing.Size(75, 23);
+            this.btnPressSecUp.TabIndex = 0;
+            this.btnPressSecUp.Text = "△";
+            this.btnPressSecUp.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -111,39 +111,39 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "00";
             // 
-            // button4
+            // btnPressSecDown
             // 
-            this.button4.Location = new System.Drawing.Point(234, 145);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "▽";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnPressSecDown.Location = new System.Drawing.Point(234, 145);
+            this.btnPressSecDown.Name = "btnPressSecDown";
+            this.btnPressSecDown.Size = new System.Drawing.Size(75, 23);
+            this.btnPressSecDown.TabIndex = 3;
+            this.btnPressSecDown.Text = "▽";
+            this.btnPressSecDown.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnPressMinDown
             // 
-            this.button5.Location = new System.Drawing.Point(133, 145);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "▽";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnPressMinDown.Location = new System.Drawing.Point(133, 145);
+            this.btnPressMinDown.Name = "btnPressMinDown";
+            this.btnPressMinDown.Size = new System.Drawing.Size(75, 23);
+            this.btnPressMinDown.TabIndex = 4;
+            this.btnPressMinDown.Text = "▽";
+            this.btnPressMinDown.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnPressHourDown
             // 
-            this.button6.Location = new System.Drawing.Point(31, 145);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "▽";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnPressHourDown.Location = new System.Drawing.Point(31, 145);
+            this.btnPressHourDown.Name = "btnPressHourDown";
+            this.btnPressHourDown.Size = new System.Drawing.Size(75, 23);
+            this.btnPressHourDown.TabIndex = 5;
+            this.btnPressHourDown.Text = "▽";
+            this.btnPressHourDown.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // ibxTtle
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 205);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(278, 21);
-            this.textBox1.TabIndex = 6;
+            this.ibxTtle.Location = new System.Drawing.Point(31, 205);
+            this.ibxTtle.Name = "ibxTtle";
+            this.ibxTtle.Size = new System.Drawing.Size(278, 21);
+            this.ibxTtle.TabIndex = 6;
             // 
             // label5
             // 
@@ -192,17 +192,17 @@
             this.Controls.Add(this.btnPressSave);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.ibxTtle);
+            this.Controls.Add(this.btnPressSecDown);
+            this.Controls.Add(this.btnPressMinDown);
+            this.Controls.Add(this.btnPressHourDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnPressSecUp);
+            this.Controls.Add(this.btnPressMinUp);
+            this.Controls.Add(this.btnPressHourUp);
             this.Name = "PlusClock";
             this.Text = "PlusClock";
             this.ResumeLayout(false);
@@ -212,17 +212,17 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnPressHourUp;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnPressMinUp;
+        private System.Windows.Forms.Button btnPressSecUp;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnPressSecDown;
+        private System.Windows.Forms.Button btnPressMinDown;
+        private System.Windows.Forms.Button btnPressHourDown;
+        private System.Windows.Forms.TextBox ibxTtle;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnPressSave;
