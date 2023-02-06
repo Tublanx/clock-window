@@ -12,7 +12,7 @@ namespace ClockProgram
 {
     public partial class Form1 : Form
     {
-        public TableLayoutPanel table = null;
+        static public TableLayoutPanel table = null;
 
         public Form1()
         {
@@ -27,6 +27,12 @@ namespace ClockProgram
 
         private void plusBtn_Click(object sender, EventArgs e)
         {
+            if (table.Controls.Count == 4)
+            {
+                MessageBox.Show("최대 4개까지만 가능합니다.", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             PlusClock plusClock = new PlusClock();
             plusClock.Show();
         }
