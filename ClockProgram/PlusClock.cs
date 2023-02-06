@@ -18,45 +18,11 @@ namespace ClockProgram
         int minute = 0;
         int second = 0;
 
-        Label hourLbl = null;
-        Label minuteLbl = null;
-        Label secondLbl = null;
-
-        TextBox tbxTitle = null;
-
         public PlusClock()
         {
             InitializeComponent();
 
-            hourLbl = this.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "lblHour");
-            minuteLbl = this.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "lblMin");
-            secondLbl = this.Controls.OfType<Label>().FirstOrDefault(c => c.Name == "lblSec");
-
-            tbxTitle = this.Controls.OfType<TextBox>().FirstOrDefault(c => c.Name == "tbxTtle");
-
-            tbxTitle.Text = "타이머1";
-        }
-
-        /// <summary>
-        /// 취소 버튼 클릭 함수
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        /// <summary>
-        /// 저장 버튼 클릭 함수
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void btnPressSave_Click(object sender, EventArgs e)
-        {
-            Form1.table.Controls.Add(hourLbl);
-
-            Close();
+            tbxTtle.Text = "타이머" + (Form1.table.Controls.Count + 1).ToString();
         }
 
         /// <summary>
@@ -69,7 +35,7 @@ namespace ClockProgram
             if (hour == 99) hour = 0;
 
             hour++;
-            hourLbl.Text = hour.ToString().PadLeft(2, '0');
+            lblHour.Text = hour.ToString().PadLeft(2, '0');
         }
 
         /// <summary>
@@ -82,7 +48,7 @@ namespace ClockProgram
             if (minute == 60) minute = 0;
 
             minute++;
-            minuteLbl.Text = minute.ToString().PadLeft(2, '0');
+            lblMin.Text = minute.ToString().PadLeft(2, '0');
         }
 
         /// <summary>
@@ -95,7 +61,7 @@ namespace ClockProgram
             if (second == 60) second = 0;
 
             second++;
-            secondLbl.Text = second.ToString().PadLeft(2, '0');
+            lblSec.Text = second.ToString().PadLeft(2, '0');
         }
 
         /// <summary>
@@ -108,7 +74,7 @@ namespace ClockProgram
             if (hour == 0) return;
 
             hour--;
-            hourLbl.Text = hour.ToString().PadLeft(2, '0');
+            lblHour.Text = hour.ToString().PadLeft(2, '0');
         }
 
         /// <summary>
@@ -121,7 +87,7 @@ namespace ClockProgram
             if (minute == 0) return;
 
             minute--;
-            minuteLbl.Text = minute.ToString().PadLeft(2, '0');
+            lblMin.Text = minute.ToString().PadLeft(2, '0');
         }
 
         /// <summary>
@@ -134,7 +100,51 @@ namespace ClockProgram
             if (second == 0) return;
 
             second--;
-            secondLbl.Text = second.ToString().PadLeft(2, '0');
+            lblSec.Text = second.ToString().PadLeft(2, '0');
         }
+
+        /// <summary>
+        /// 저장 버튼 클릭 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnPressSave_Click(object sender, EventArgs e)
+        {
+            FlowLayoutPanel flowLayout = new FlowLayoutPanel();
+
+            Label titleLbl = new Label();
+            Label timeLbl = new Label();
+
+            titleLbl.Text = tbxTtle.Text;
+            timeLbl.Text = lblHour.Text + ":" + lblMin.Text + ":" + lblSec.Text;
+
+            titleLbl.TextAlign = ContentAlignment.MiddleCenter;
+            timeLbl.TextAlign = ContentAlignment.MiddleCenter;
+            titleLbl.AutoSize = false;
+            timeLbl.AutoSize = false;
+
+            titleLbl.Height = 50;
+
+            titleLbl.Font = new Font("맑은 고딕", 20, FontStyle.Bold);
+            timeLbl.Font = new Font("맑은 고딕", 14);
+
+            flowLayout.Controls.Add(titleLbl);
+            flowLayout.Controls.Add(timeLbl);
+
+            Form1.table.Controls.Add(flowLayout);
+
+            Close();
+        }
+
+        /// <summary>
+        /// 취소 버튼 클릭 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }
