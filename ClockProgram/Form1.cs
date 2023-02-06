@@ -19,6 +19,13 @@ namespace ClockProgram
             InitializeComponent();
 
             table = this.Controls.OfType<TableLayoutPanel>().FirstOrDefault(c => c.Name == "tablePanel");
+
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.0f));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.AutoSize));
+            table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.0f));
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50.0f));
+            table.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+            table.RowStyles.Add(new RowStyle(SizeType.Percent, 50.0f));
         }
 
         private void resetBtn_Click(object sender, EventArgs e)
@@ -36,5 +43,6 @@ namespace ClockProgram
             PlusClock plusClock = new PlusClock();
             plusClock.Show();
         }
+
     }
 }
