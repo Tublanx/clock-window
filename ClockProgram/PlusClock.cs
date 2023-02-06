@@ -54,8 +54,7 @@ namespace ClockProgram
         /// <param name="e"></param>
         private void btnPressSave_Click(object sender, EventArgs e)
         {
-            Form1 form= new Form1();
-            form.table.Controls.Add(hourLbl);
+            Form1.table.Controls.Add(hourLbl);
 
             Close();
         }
