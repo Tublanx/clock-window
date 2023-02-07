@@ -114,15 +114,21 @@ namespace ClockProgram
 
             Label titleLbl = new Label();
             Label timeLbl = new Label();
+            Button btnStart = new Button();
 
             titleLbl.Text = tbxTtle.Text;
             timeLbl.Text = lblHour.Text + ":" + lblMin.Text + ":" + lblSec.Text;
+            btnStart.Text = "시작";
 
-            titleLbl.TextAlign = ContentAlignment.MiddleCenter;
-            timeLbl.TextAlign = ContentAlignment.MiddleCenter;
             titleLbl.AutoSize = false;
             timeLbl.AutoSize = false;
+            btnStart.Width = 150;
 
+            flowLayout.Dock = DockStyle.Fill;
+            flowLayout.FlowDirection = FlowDirection.TopDown;
+
+            flowLayout.BorderStyle = BorderStyle.FixedSingle;
+            
             titleLbl.Height = 50;
 
             titleLbl.Font = new Font("맑은 고딕", 20, FontStyle.Bold);
@@ -130,6 +136,7 @@ namespace ClockProgram
 
             flowLayout.Controls.Add(titleLbl);
             flowLayout.Controls.Add(timeLbl);
+            flowLayout.Controls.Add(btnStart);  
 
             Form1.table.Controls.Add(flowLayout);
 
