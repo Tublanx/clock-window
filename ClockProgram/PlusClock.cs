@@ -18,6 +18,10 @@ namespace ClockProgram
         int minute = 0;
         int second = 0;
 
+        private Label lblTime = null;
+        private Button btnStart = null;
+        private Timer timer = null;
+
         public PlusClock()
         {
             InitializeComponent();
@@ -113,15 +117,15 @@ namespace ClockProgram
             FlowLayoutPanel flowLayout = new FlowLayoutPanel();
 
             Label titleLbl = new Label();
-            Label timeLbl = new Label();
-            Button btnStart = new Button();
+            lblTime = new Label();
+            btnStart = new Button();
 
             titleLbl.Text = tbxTtle.Text;
-            timeLbl.Text = lblHour.Text + ":" + lblMin.Text + ":" + lblSec.Text;
+            lblTime.Text = lblHour.Text + ":" + lblMin.Text + ":" + lblSec.Text;
             btnStart.Text = "시작";
 
             titleLbl.AutoSize = false;
-            timeLbl.AutoSize = false;
+            lblTime.AutoSize = false;
             btnStart.Width = 150;
 
             flowLayout.Dock = DockStyle.Fill;
@@ -132,13 +136,15 @@ namespace ClockProgram
             titleLbl.Height = 50;
 
             titleLbl.Font = new Font("맑은 고딕", 20, FontStyle.Bold);
-            timeLbl.Font = new Font("맑은 고딕", 14);
+            lblTime.Font = new Font("맑은 고딕", 14);
 
             flowLayout.Controls.Add(titleLbl);
-            flowLayout.Controls.Add(timeLbl);
-            flowLayout.Controls.Add(btnStart);  
+            flowLayout.Controls.Add(lblTime);
+            flowLayout.Controls.Add(btnStart);
 
             Form1.table.Controls.Add(flowLayout);
+
+            this.btnStart.Click += BtnClick_Start;
 
             Close();
         }
@@ -153,5 +159,51 @@ namespace ClockProgram
             Close();
         }
 
+        /// <summary>
+        /// 시작 버튼 클릭 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BtnClick_Start(Object sender, EventArgs e)
+        {
+            timer = new Timer();
+            timer.Tick += Timer_Tick;
+
+            // 선택한 시간만큼 타이머 돌리기
+            timer.Interval = 1000;
+            timer.Start();
+        }
+
+        /// <summary>
+        /// 타이머 이벤트 핸들러 메서드
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        /// <exception cref="NotImplementedException"></exception>
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            if (second == 0)
+            {
+                minute--;
+                second = 59;
+            }
+            else
+            {
+                second--;
+            }
+
+            if(minute == 0) {
+                hour--;
+            }
+
+            if(hour == 0)
+            {
+                if(minute == 0 && second == 0)
+                {
+                    timer.Stop();
+                }
+            }
+            lblTime.Text = hour.ToString("D2") + ":" + minute.ToString("D2") + ":" + second.ToString("D2");
+        }
     }
 }
