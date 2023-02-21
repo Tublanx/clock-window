@@ -43,6 +43,5 @@ namespace ClockProgram
             PlusClock plusClock = new PlusClock();
             plusClock.Show();
         }
-
     }
 }
