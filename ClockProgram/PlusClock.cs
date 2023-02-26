@@ -166,12 +166,15 @@ namespace ClockProgram
         /// <param name="e"></param>
         private void BtnClick_Start(Object sender, EventArgs e)
         {
-            timer = new Timer();
-            timer.Tick += Timer_Tick;
+            if(timer != null)
+            {
+                timer = new Timer();
+                timer.Tick += Timer_Tick;
 
-            // 선택한 시간만큼 타이머 돌리기
-            timer.Interval = 1000;
-            timer.Start();
+                // 선택한 시간만큼 타이머 돌리기
+                timer.Interval = 1000;
+                timer.Start();
+            }
         }
 
         /// <summary>
@@ -184,7 +187,14 @@ namespace ClockProgram
         {
             if (second == 0)
             {
-                minute--;
+                if(minute == 0 && hour > 0)
+                {
+                    minute = 59;
+                    hour--;
+                } else
+                {
+                    minute--;
+                }
                 second = 59;
             }
             else
