@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ClockProgram
@@ -14,9 +7,9 @@ namespace ClockProgram
     public partial class PlusClock : Form
     {
 
-        int hour = 0;
-        int minute = 0;
-        int second = 0;
+        private int hour = 0;
+        private int minute = 0;
+        private int second = 0;
 
         private Label lblTime = null;
         private Button btnStart = null;
@@ -130,8 +123,6 @@ namespace ClockProgram
 
             flowLayout.Dock = DockStyle.Fill;
             flowLayout.FlowDirection = FlowDirection.TopDown;
-
-            flowLayout.BorderStyle = BorderStyle.FixedSingle;
             
             titleLbl.Height = 50;
 
@@ -166,15 +157,12 @@ namespace ClockProgram
         /// <param name="e"></param>
         private void BtnClick_Start(Object sender, EventArgs e)
         {
-            if(timer != null)
-            {
-                timer = new Timer();
-                timer.Tick += Timer_Tick;
+            timer = new Timer();
+            timer.Tick += Timer_Tick;
 
-                // 선택한 시간만큼 타이머 돌리기
-                timer.Interval = 1000;
-                timer.Start();
-            }
+            // 선택한 시간만큼 타이머 돌리기
+            timer.Interval = 1000;
+            timer.Start();
         }
 
         /// <summary>
@@ -185,6 +173,12 @@ namespace ClockProgram
         /// <exception cref="NotImplementedException"></exception>
         private void Timer_Tick(object sender, EventArgs e)
         {
+            if(hour == 0 && minute == 0 && second == 0)
+            {
+                timer.Stop();
+                return;
+            }
+
             if (second == 0)
             {
                 if(minute == 0 && hour > 0)
