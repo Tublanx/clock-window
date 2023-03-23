@@ -13,6 +13,7 @@ namespace ClockProgram
 
         private Label lblTime = null;
         private Button btnStart = null;
+        private Button btnDel = null;
         private Timer timer = null;
 
         public PlusClock()
@@ -108,18 +109,19 @@ namespace ClockProgram
         private void btnPressSave_Click(object sender, EventArgs e)
         {
             FlowLayoutPanel flowLayout = new FlowLayoutPanel();
+            FlowLayoutPanel southLayout = new FlowLayoutPanel();
 
             Label titleLbl = new Label();
             lblTime = new Label();
             btnStart = new Button();
+            btnDel= new Button();
 
             titleLbl.Text = tbxTtle.Text;
             lblTime.Text = lblHour.Text + ":" + lblMin.Text + ":" + lblSec.Text;
             btnStart.Text = "시작";
+            btnDel.Text = "삭제";
 
-            titleLbl.AutoSize = false;
-            lblTime.AutoSize = false;
-            btnStart.Width = 150;
+            lblTime.AutoSize = true;
 
             flowLayout.Dock = DockStyle.Fill;
             flowLayout.FlowDirection = FlowDirection.TopDown;
@@ -127,11 +129,15 @@ namespace ClockProgram
             titleLbl.Height = 50;
 
             titleLbl.Font = new Font("맑은 고딕", 20, FontStyle.Bold);
-            lblTime.Font = new Font("맑은 고딕", 14);
+            lblTime.Font = new Font("맑은 고딕", 25);
 
             flowLayout.Controls.Add(titleLbl);
             flowLayout.Controls.Add(lblTime);
-            flowLayout.Controls.Add(btnStart);
+            flowLayout.Controls.Add(southLayout);
+            southLayout.Controls.Add(btnStart);
+            southLayout.Controls.Add(btnDel);
+
+            southLayout.SetBounds(0, 0, 300, 70);
 
             Form1.table.Controls.Add(flowLayout);
 
